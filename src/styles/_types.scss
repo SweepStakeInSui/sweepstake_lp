@@ -1,0 +1,285 @@
+@use 'sass:map';
+
+@mixin make-typography($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    } @else {
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+@mixin make-font-size($fs-font-size) {
+  @if type-of($fs-font-size) == 'list' {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+      letter-spacing: nth($fs-font-size, 3);
+      font-weight: nth($fs-font-size, 4);
+    }
+  } @else {
+    font-size: $fs-font-size;
+  }
+}
+
+// screen-size: (font-size, line-height, letter-spacing, font-weight)
+$display1-font-sizes: (
+  xs: (
+    rem(120px),
+    85%,
+    0,
+    400,
+  ),
+  sm: (
+    rem(200px),
+    85%,
+    0,
+    400,
+  ),
+  md: (
+    rem(240px),
+    85%,
+    0,
+    400,
+  ),
+);
+
+$display2-font-sizes: (
+  xs: (
+    rem(80px),
+    100%,
+    0,
+    400,
+  ),
+  sm: (
+    rem(80px),
+    100%,
+    0,
+    400,
+  ),
+  md: (
+    rem(120px),
+    100%,
+    0,
+    400,
+  ),
+);
+
+$h1-font-sizes: (
+  xs: (
+    rem(48px),
+    100%,
+    0,
+    400,
+  ),
+  sm: (
+    rem(60px),
+    100%,
+    0,
+    400,
+  ),
+  md: (
+    rem(96px),
+    82%,
+    0,
+    400,
+  ),
+);
+
+$h2-font-sizes: (
+  xs: (
+    rem(40px),
+    100%,
+    0,
+    400,
+  ),
+  sm: (
+    rem(40px),
+    100%,
+    0,
+    400,
+  ),
+  md: (
+    rem(60px),
+    100%,
+    0,
+    400,
+  ),
+);
+
+$h3-font-sizes: (
+  xs: (
+    rem(36px),
+    100%,
+    0,
+    400,
+  ),
+  sm: (
+    rem(36px),
+    100%,
+    0,
+    400,
+  ),
+  md: (
+    rem(48px),
+    100%,
+    0,
+    400,
+  ),
+);
+
+$h4-font-sizes: (
+  xs: (
+    rem(28px),
+    100%,
+    0,
+    400,
+  ),
+  sm: (
+    rem(28px),
+    100%,
+    0,
+    400,
+  ),
+  md: (
+    rem(36px),
+    100%,
+    0,
+    400,
+  ),
+);
+
+$h5-font-sizes: (
+  xs: (
+    rem(24px),
+    100%,
+    0,
+    400,
+  ),
+);
+
+$h6-font-sizes: (
+  xs: (
+    rem(20px),
+    100%,
+    0,
+    400,
+  ),
+);
+
+$subtitle1-font-sizes: (
+  xs: (
+    rem(14px),
+    100%,
+    0,
+    700,
+  ),
+  sm: (
+    rem(16px),
+    100%,
+    0,
+    700,
+  ),
+  md: (
+    rem(20px),
+    100%,
+    0,
+    700,
+  ),
+);
+
+$subtitle2-font-sizes: (
+  xs: (
+    rem(12px),
+    100%,
+    0,
+    700,
+  ),
+  sm: (
+    rem(16px),
+    100%,
+    0,
+    700,
+  ),
+  md: (
+    rem(16px),
+    100%,
+    0,
+    700,
+  ),
+);
+
+$label-font-sizes: (
+  xs: (
+    rem(16px),
+    100%,
+    0,
+    700,
+  ),
+);
+
+$body-font-sizes: (
+  xs: (
+    rem(14px),
+    100%,
+    0,
+    400,
+  ),
+  md: (
+    rem(20px),
+    100%,
+    0,
+    400,
+  ),
+);
+
+$caption-font-sizes: (
+  xs: (
+    rem(12px),
+    130%,
+    0,
+    400,
+  ),
+  md: (
+    rem(16px),
+    140%,
+    0,
+    400,
+  ),
+);
+
+$description-font-sizes: (
+  xs: (
+    rem(10px),
+    100%,
+    rem(0.24px),
+    700,
+  ),
+  md: (
+    rem(12px),
+    100%,
+    rem(0.24px),
+    700,
+  ),
+);
+
+$button-font-sizes: (
+  xs: (
+    rem(12px),
+    100%,
+    rem(1px),
+    700,
+  ),
+  md: (
+    rem(16px),
+    100%,
+    rem(1px),
+    700,
+  ),
+);

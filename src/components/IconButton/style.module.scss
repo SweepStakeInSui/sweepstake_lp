@@ -1,0 +1,147 @@
+$sm: (
+  p: 2px,
+  border-radius: 5px,
+  width: 16px,
+);
+
+$md: (
+  p: 8px,
+  border-radius: 5px,
+  width: 24px,
+);
+
+$lg: (
+  p: 12px,
+  border-radius: 7px,
+  width: 32px,
+);
+
+$button-sizes: (
+  'sm': $sm,
+  'md': $md,
+  'lg': $lg,
+);
+
+@mixin make-button-size {
+  @each $key, $size in $button-sizes {
+    .#{$key} {
+      padding: rem(map-get($size, 'p'));
+      border-radius: rem(map-get($size, 'border-radius'));
+      svg {
+        width: rem(map-get($size, 'width'));
+        height: rem(map-get($size, 'width'));
+      }
+    }
+  }
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  touch-action: manipulation;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &.loading {
+    @keyframes loading {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    .loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-animation: loading 1s infinite linear;
+      animation: loading 1s infinite linear;
+    }
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  &.rounded {
+    border-radius: 9999px;
+  }
+}
+
+.primary {
+  background-color: $primary;
+  transition: transform 0.4s var(--easeOutQuart);
+
+  @include min-pc {
+    padding: rem(10px);
+  }
+}
+
+.secondary {
+  background-color: $secondary;
+
+  transition:
+    transform 0.4s var(--easeOutQuart),
+    0.4s background-color var(--easeOutQuart);
+}
+
+.solid {
+  &.primary {
+    background-color: var(--blue);
+    color: var(--beige);
+  }
+
+  &.secondary {
+    background-color: var(--beige);
+    color: var(--blue);
+  }
+}
+
+.outline {
+  background: transparent !important;
+  &.primary {
+    border: rem(1px) solid $blue;
+    color: $blue;
+  }
+
+  &.secondary {
+    border: rem(1px) solid $beige;
+    color: $beige;
+  }
+}
+
+.ghost {
+  background: transparent !important;
+  transition: 0.4s opacity var(--easeOutQuart);
+  &:not(:disabled):hover {
+    opacity: 0.7;
+  }
+
+  &.secondary {
+    color: var(--beige);
+  }
+}
+
+.text {
+  background: transparent !important;
+  border: 0;
+  transition: 0.4s opacity var(--easeOutQuart);
+
+  &:not(:disabled):hover {
+    opacity: 0.7;
+  }
+}
+
+@include make-button-size();

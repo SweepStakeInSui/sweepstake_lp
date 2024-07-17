@@ -1,0 +1,191 @@
+$sm-typo: (
+  fs: 12px,
+  lh: 100%,
+  fw: 700,
+  ls: rem(1px),
+);
+
+$md-typo: (
+  fs: 14px,
+  lh: 100%,
+  fw: 700,
+  ls: rem(1px),
+);
+
+$lg-typo: (
+  fs: 16px,
+  lh: 100%,
+  fw: 700,
+  ls: rem(1px),
+);
+
+// size
+$sm: (
+  py: 5px,
+  px: 15px,
+  height: 30px,
+  border-radius: 5px,
+  typo: $sm-typo,
+);
+
+$md: (
+  py: 10px,
+  px: 16px,
+  height: 36px,
+  border-radius: 5px,
+  typo: $md-typo,
+);
+
+$lg: (
+  py: 7px,
+  px: 21px,
+  height: 42px,
+  border-radius: 7px,
+  typo: $lg-typo,
+);
+
+$button-sizes: (
+  'sm': $sm,
+  'md': $md,
+  'lg': $lg,
+);
+
+@mixin make-button-typography($sizes: $md-typo) {
+  @if map-has-key($sizes, 'fs') {
+    font-size: rem(map-get($sizes, 'fs'));
+  }
+
+  @if map-has-key($sizes, 'lh') {
+    line-height: map-get($sizes, 'lh');
+  }
+
+  @if map-has-key($sizes, 'fw') {
+    font-weight: map-get($sizes, 'fw');
+  }
+
+  @if map-has-key($sizes, 'ls') {
+    letter-spacing: map-get($sizes, 'ls');
+  }
+}
+
+@mixin make-button-size {
+  @each $key, $size in $button-sizes {
+    .#{$key} {
+      padding: rem(map-get($size, 'py')) rem(map-get($size, 'px'));
+      height: rem(map-get($size, 'height'));
+      border-radius: rem(map-get($size, 'border-radius'));
+
+      @if (map-has-key($size, 'typo')) {
+        @include make-button-typography(map-get($size, 'typo'));
+      }
+    }
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  touch-action: manipulation;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &.loading {
+    @keyframes loading {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    .loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-animation: loading 1s infinite linear;
+      animation: loading 1s infinite linear;
+    }
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  &.rounded {
+    border-radius: 9999px;
+  }
+}
+
+.primary {
+  background-color: $primary;
+  transition: transform 0.4s var(--easeOutQuart);
+
+  @include min-pc {
+    padding: rem(10px) rem(60px);
+  }
+}
+
+.secondary {
+  background-color: $secondary;
+
+  transition:
+    transform 0.4s var(--easeOutQuart),
+    0.4s background-color var(--easeOutQuart);
+}
+
+.solid {
+  &.primary {
+    color: $beige;
+  }
+
+  &.secondary {
+    color: $blue;
+  }
+}
+
+.outline {
+  background: transparent !important;
+  &.primary {
+    border: rem(1px) solid $blue;
+    color: $blue;
+  }
+
+  &.secondary {
+    border: rem(1px) solid $beige;
+    color: $beige;
+  }
+}
+
+.ghost {
+  background: transparent !important;
+  transition: 0.4s opacity var(--easeOutQuart);
+  &:not(:disabled):hover {
+    opacity: 0.7;
+  }
+}
+
+.text {
+  background: transparent !important;
+  padding: 0 !important;
+  border: 0;
+  transition: 0.4s opacity var(--easeOutQuart);
+
+  &:not(:disabled):hover {
+    opacity: 0.7;
+  }
+}
+
+@include make-button-size();
+
+@include make-typography-color();

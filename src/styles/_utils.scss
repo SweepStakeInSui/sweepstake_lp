@@ -1,0 +1,21 @@
+.ul__reset {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.object__image--fit {
+  display: block;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.progressive-image {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+}

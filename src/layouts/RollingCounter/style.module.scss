@@ -1,0 +1,37 @@
+.fullframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.counter {
+  height: rem(70px);
+  overflow: hidden;
+  position: absolute;
+}
+
+.numbmask {
+  position: relative;
+  height: 100%;
+  width: rem(16px);
+  overflow: hidden;
+  float: right;
+}
+
+.numb {
+  text-align: center;
+  font-weight: bold;
+  height: 100%;
+  // width: 100%;
+  line-height: rem(80px) !important;
+}
+
+.gradmask {
+  position: absolute;
+}
+
+.percent {
+  position: relative;
+}

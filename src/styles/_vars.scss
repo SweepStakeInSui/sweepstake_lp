@@ -1,0 +1,43 @@
+/* SCREEN SIZES */
+$breakpoints: (
+  xs: 0px,
+  sm: 476px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px,
+);
+
+/* SCREEN SIZES */
+$screen-xs: 0px;
+$screen-sm: 476px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1280px;
+$screen-xxl: 1536px;
+
+/* THEME VARIABLE */
+$easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
+$easeInOutCirc: cubic-bezier(0.45, 0, 0.55, 1);
+
+/* TYPOGRAPHY*/
+$font_size_rem: 10px;
+
+$black: #000000;
+$white: #ffffff;
+$beige: #ede7df;
+$secondary: $beige;
+$blue: #3f5458;
+$primary: $blue;
+$red: #e26d49;
+$accent: $red;
+$gold: #dca66d;
+$dark: #12100e;
+
+$typography-colors: (
+  black: $black,
+  white: $white,
+  secondary: $beige,
+  primary: $blue,
+  accent: $red,
+);

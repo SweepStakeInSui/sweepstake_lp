@@ -1,0 +1,7 @@
+.LineMask {
+  :global(.char) {
+    will-change: transform;
+    backface-visibility: hidden;
+    inset: 0;
+  }
+}

@@ -1,0 +1,48 @@
+.navbar_wrapper {
+  display: flex;
+  gap: rem(20px);
+  position: fixed;
+  bottom: rem(24px);
+  z-index: 2;
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+  .navbar_inner {
+    display: flex;
+    gap: rem(40px);
+    align-self: center;
+    padding: rem(16px);
+    border-radius: rem(5px);
+    background: transparentize($blue, 0.2);
+    outline: rem(1px) solid $beige;
+    outline-offset: rem(-4px);
+    backdrop-filter: blur(8px);
+
+    &_logo {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      svg {
+        width: rem(24px);
+        height: auto !important;
+      }
+    }
+  }
+}
+
+.navbar {
+  &_btn {
+    position: relative;
+    .active {
+      &::after {
+        content: '';
+        position: absolute;
+        width: rem(6px);
+        height: rem(6px);
+        background-color: var(--beige);
+        bottom: 0;
+        border-radius: rem(9999px);
+      }
+    }
+  }
+}

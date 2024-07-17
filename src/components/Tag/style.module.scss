@@ -1,0 +1,42 @@
+$success-color: ();
+
+$white-color: (
+  color: $white,
+  border-color: $white,
+);
+
+$danger-color: (
+  color: $red-100,
+  border-color: $red,
+);
+
+$primary-color: (
+  color: $purple,
+  border-color: $purple-100,
+);
+
+$tag-variants: (
+  primary: $primary-color,
+  white: $white-color,
+  success: $success-color,
+  danger: $danger-color,
+);
+
+@mixin make-tag($color-map) {
+  color: map-get($color-map, 'color');
+  border: 1px solid map-get($color-map, 'border-color');
+}
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4px);
+  padding: rem(2px) rem(6px);
+  border-radius: 2222px;
+}
+
+@each $key, $color in $tag-variants {
+  .#{$key} {
+    @include make-tag($color);
+  }
+}

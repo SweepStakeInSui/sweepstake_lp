@@ -1,0 +1,43 @@
+@for $i from 1 through 12 {
+  .span-#{$i} {
+    grid-column-end: span $i;
+  }
+
+  .start-#{$i} {
+    grid-column-start: $i;
+  }
+}
+
+@for $i from 1 through 12 {
+  .sm-span-#{$i} {
+    grid-column-end: span $i;
+  }
+
+  .sm-start-#{$i} {
+    grid-column-start: $i;
+  }
+}
+
+@include min-tablet {
+  @for $i from 1 through 12 {
+    .md-span-#{$i} {
+      grid-column-end: span $i;
+    }
+
+    .md-start-#{$i} {
+      grid-column-start: $i;
+    }
+  }
+}
+
+@include min-pc {
+  @for $i from 1 through 12 {
+    .lg-span-#{$i} {
+      grid-column-end: span $i;
+    }
+
+    .lg-start-#{$i} {
+      grid-column-start: $i;
+    }
+  }
+}

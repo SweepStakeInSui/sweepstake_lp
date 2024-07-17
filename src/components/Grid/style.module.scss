@@ -1,0 +1,42 @@
+.grid {
+  display: grid;
+  column-gap: var(--mgap-x);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  @include min-tablet {
+    column-gap: var(--gap-x);
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  @include min-pc {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+@for $i from 1 through 12 {
+  .cols__#{$i} {
+    grid-template-columns: repeat($i, minmax(0, 1fr));
+  }
+}
+
+@for $i from 1 through 12 {
+  .sm_cols__#{$i} {
+    grid-template-columns: repeat($i, minmax(0, 1fr));
+  }
+}
+
+@include min-tablet {
+  @for $i from 1 through 12 {
+    .md_cols__#{$i} {
+      grid-template-columns: repeat($i, minmax(0, 1fr));
+    }
+  }
+}
+
+@include min-pc {
+  @for $i from 1 through 12 {
+    .lg_cols__#{$i} {
+      grid-template-columns: repeat($i, minmax(0, 1fr));
+    }
+  }
+}

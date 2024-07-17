@@ -1,0 +1,17 @@
+.contentBlock {
+  padding-top: rem(12px);
+
+  &.topBorder {
+    border-top: rem(3px) solid var(--beige);
+  }
+
+  &.rightAlign {
+    text-align: right;
+  }
+
+  &_content {
+    :last-child {
+      margin-top: rem(32px);
+    }
+  }
+}

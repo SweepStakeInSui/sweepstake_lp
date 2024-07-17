@@ -1,0 +1,66 @@
+.typography {
+  box-sizing: border-box;
+}
+
+.display1 {
+  @include make-typography($display1-font-sizes);
+}
+
+.display2 {
+  @include make-typography($display2-font-sizes);
+}
+
+.h1 {
+  @include make-typography($h1-font-sizes);
+}
+
+.h2 {
+  @include make-typography($h2-font-sizes);
+}
+
+.h3 {
+  @include make-typography($h3-font-sizes);
+}
+
+.h4 {
+  @include make-typography($h4-font-sizes);
+}
+
+.h5 {
+  @include make-typography($h5-font-sizes);
+}
+
+.h6 {
+  @include make-typography($h6-font-sizes);
+}
+
+.subtitle1 {
+  @include make-typography($subtitle1-font-sizes);
+}
+
+.subtitle2 {
+  @include make-typography($subtitle2-font-sizes);
+}
+
+.label {
+  @include make-typography($label-font-sizes);
+}
+
+.body {
+  @include make-typography($body-font-sizes);
+}
+
+.caption {
+  @include make-typography($caption-font-sizes);
+}
+
+.description {
+  @include make-typography($description-font-sizes);
+}
+
+.button {
+  text-transform: uppercase;
+  @include make-typography($button-font-sizes);
+}
+
+@include make-typography-color;

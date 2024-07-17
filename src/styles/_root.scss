@@ -1,0 +1,20 @@
+:root {
+  --easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --easeInOutQuart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  //color
+  --black: #000000;
+  --white: #ffffff;
+  --beige: #ede7df;
+  --blue: #3f5458;
+  --dark-blue: #36494d;
+  --red: #f46642;
+  --gold: #dca66d;
+  --dark: #12100e;
+
+  --gap-x: #{rem(24px)};
+  --mgap-x: #{rem(16px)};
+
+  --radius: #{rem(8px)};
+  --radius-mobile: #{rem(16px)};
+}

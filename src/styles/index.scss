@@ -1,0 +1,33 @@
+@import '_vars';
+@import '_root';
+@import '_reset';
+@import '_mixins';
+
+html {
+  font-size: vh(10px);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: rem(3px);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: $blue;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $beige;
+}

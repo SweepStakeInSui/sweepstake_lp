@@ -1,0 +1,9 @@
+.sectionTitle {
+  &_index {
+    position: absolute;
+    top: rem(-12px);
+  }
+  &_title {
+    text-transform: uppercase;
+  }
+}

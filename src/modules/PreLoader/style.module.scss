@@ -1,0 +1,9 @@
+.preLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--blue);
+  z-index: 99999999999999999;
+}

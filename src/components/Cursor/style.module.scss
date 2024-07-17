@@ -1,0 +1,23 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: rem(20);
+  height: rem(20);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  padding: rem(10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--beige);
+  opacity: 0;
+  transition: transform 0.05s ease;
+
+  &_text {
+    font-size: rem(12);
+    font-weight: bold;
+    display: none;
+  }
+}

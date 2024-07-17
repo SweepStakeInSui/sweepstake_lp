@@ -1,0 +1,13 @@
+.chip {
+  padding: 0 rem(12px);
+  border: rem(1px) solid var(--blue);
+  border-radius: rem(12px);
+
+  * {
+    text-wrap: nowrap;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

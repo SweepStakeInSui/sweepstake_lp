@@ -1,0 +1,21 @@
+:root {
+  --spa-320: #{rem(320px)};
+  --spa-160: #{rem(160px)};
+  --spa-64: #{rem(64px)};
+}
+
+.spa {
+  display: block;
+
+  &__320 {
+    margin-bottom: var(--spa-320);
+  }
+
+  &__160 {
+    margin-bottom: var(--spa-160);
+  }
+
+  &__64 {
+    margin-bottom: var(--spa-64);
+  }
+}

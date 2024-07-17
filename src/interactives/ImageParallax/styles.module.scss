@@ -1,0 +1,16 @@
+.imgParallax {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &_el {
+    object-fit: cover;
+  }
+
+  img,
+  video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

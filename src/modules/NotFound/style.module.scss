@@ -1,0 +1,26 @@
+.notFound {
+  position: fixed;
+  z-index: 3;
+  background-color: var(--blue);
+  width: 100vw;
+  height: 100vh;
+  padding-top: rem(20px);
+  padding-bottom: rem(20px);
+
+  @include min-pc {
+    padding-top: rem(80px);
+    padding-bottom: rem(80px);
+  }
+
+  &_stack {
+    row-gap: rem(8px);
+  }
+
+  &_btn {
+    width: fit-content;
+  }
+
+  &_text {
+    margin-bottom: rem(12px);
+  }
+}
