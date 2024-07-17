@@ -1,0 +1,11 @@
+services:
+  lp:
+    build:
+      context: .
+    restart: unless-stopped
+    container_name: sweepstake-lp
+    env_file:
+      - .env.production
+    tty: true
+    ports:
+      - ${PORT}:3000
