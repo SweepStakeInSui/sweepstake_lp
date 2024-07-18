@@ -3,8 +3,6 @@
 import cn from 'classnames';
 import React, { forwardRef } from 'react';
 
-import { titleFont } from '@/constants/font-styles';
-
 import styles from './style.module.scss';
 
 export type TypographyVariant =
@@ -41,7 +39,6 @@ export const Typography = forwardRef((props: TypographyProps, ref: unknown) => {
     tag: Tag = 'p',
     className,
     children,
-    isTitle = false,
     ...restProps
   } = props;
 
@@ -54,7 +51,6 @@ export const Typography = forwardRef((props: TypographyProps, ref: unknown) => {
         color ? styles[color] : null,
         styles[variant],
         className,
-        isTitle && titleFont.className,
       )}
     >
       {children}

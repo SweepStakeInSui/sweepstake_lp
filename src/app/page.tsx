@@ -1,3 +1,5 @@
+import MainModule from '@/modules/Main';
+
 export default function Hero() {
-  return <>CROISSAIN</>;
+  return <MainModule />;
 }

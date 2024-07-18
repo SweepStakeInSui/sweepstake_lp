@@ -8,7 +8,6 @@ import { gsap } from 'gsap';
 import React, { useRef } from 'react';
 
 import Stack from '@/components/Stack';
-import RollingCounter from '@/layouts/RollingCounter';
 
 import Container from '../Container';
 import s from './style.module.scss';
@@ -24,7 +23,6 @@ export default function PreLoader({
 }: Readonly<IPreLoader>) {
   const progress = signal(0);
   const contentRef = useRef<HTMLDivElement>(null);
-  const innerRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const { setIsFirstLoad } = useAnimationStore();
   const lenis = useLenis();
@@ -75,10 +73,7 @@ export default function PreLoader({
 
   return (
     <Container className={s.preLoader_wrapper} ref={contentRef}>
-      <Stack className={s.preLoader} ref={innerRef}>
-        <div className={s.percent_text}>
-          <RollingCounter />
-        </div>
+      <Stack className={s.preLoader}>
         <div className={s.percent_wrapper}>
           <div className={s.percent} ref={progressBarRef} />
         </div>

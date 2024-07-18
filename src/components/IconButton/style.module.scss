@@ -81,7 +81,7 @@ $button-sizes: (
 }
 
 .primary {
-  background-color: $primary;
+  background-color: $red;
   transition: transform 0.4s var(--easeOutQuart);
 
   @include min-pc {
@@ -90,7 +90,7 @@ $button-sizes: (
 }
 
 .secondary {
-  background-color: $secondary;
+  background-color: $black;
 
   transition:
     transform 0.4s var(--easeOutQuart),
@@ -112,13 +112,13 @@ $button-sizes: (
 .outline {
   background: transparent !important;
   &.primary {
-    border: rem(1px) solid $blue;
-    color: $blue;
+    border: rem(1px) solid $black;
+    color: $black;
   }
 
   &.secondary {
-    border: rem(1px) solid $beige;
-    color: $beige;
+    border: rem(1px) solid $white;
+    color: $white;
   }
 }
 

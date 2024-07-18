@@ -31,13 +31,13 @@ export default function Button(props: Readonly<ButtonProps>): React.ReactNode {
     children,
     type = 'button',
     disabled,
-    variant = 'plain',
+    variant = 'solid',
     className,
     size = 'md',
     shape = 'default',
     loading,
     block,
-    color = 'inherit',
+    color = 'primary',
     ...restProps
   } = props;
 

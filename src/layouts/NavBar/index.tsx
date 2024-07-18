@@ -1,67 +1,40 @@
-'use client';
-
-import Button from '@components/Button';
 import { useLenis } from '@studio-freight/react-lenis';
-import cn from 'classnames';
 
-import IconButton from '@/components/IconButton';
-import { useScroll } from '@/contexts/ScrollContext';
-import useUiContext from '@/contexts/uiContext';
+import ConnectWalletBtn from '@/components/ConnectWalletBtn';
+import Flex from '@/components/Flex';
+import SvgIcon from '@/components/SvgIcon';
+import { useIsMobile } from '@/hooks/useWindowSize';
 
+import Container from '../Container';
 import s from './style.module.scss';
 
-export interface INavList {
-  name: string | React.ReactNode;
-  link: string;
-}
-
-type INavBar = {
-  navlist: INavList[];
-};
-
-export default function NavBar({ navlist }: Readonly<INavBar>) {
-  const { activeSection } = useUiContext();
-  const { scrollTo } = useScroll();
-
+export default function NavBar() {
   const lenis = useLenis();
-
-  const handleLogoClick = () => {
-    lenis.stop();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    lenis.start();
-  };
+  const isMobile = useIsMobile();
 
   return (
-    <nav className={cn(s.navbar_wrapper)}>
-      <div className={cn(s.navbar_inner)}>
-        <IconButton
-          variant="ghost"
-          tabIndex={0}
-          aria-label="Go to top"
-          className={cn(s.navbar_inner_logo)}
-          onKeyDown={handleLogoClick}
-          onClick={handleLogoClick}
-          icon="/icons/logo.svg"
-        />
-        {navlist?.map((link, index) => (
-          <div className={s.navbar_btn} key={`$navBtn_${link.name}`}>
-            <Button
-              color="secondary"
-              variant={`${index === navlist.length - 1 ? 'solid' : 'ghost'}`}
-              className={
-                activeSection === link.link && index !== navlist.length - 1
-                  ? s.active
-                  : ''
-              }
-              onClick={() => {
-                scrollTo(link.link);
-              }}
-            >
-              {link.name}
-            </Button>
-          </div>
-        ))}
-      </div>
-    </nav>
+    <Container className={s.navbar}>
+      <Flex className={s.navbar_inner}>
+        <button
+          className={s.navbar_logo__mobile}
+          onClick={() => {
+            lenis.stop();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            lenis.start();
+          }}
+        >
+          {isMobile ? (
+            <SvgIcon
+              src="/logos/square-logo.svg"
+              aria-label="Sweepstake logo"
+            />
+          ) : (
+            <SvgIcon src="/logos/logo.svg" aria-label="Sweepstake logo" />
+          )}
+        </button>
+
+        <ConnectWalletBtn />
+      </Flex>
+    </Container>
   );
 }

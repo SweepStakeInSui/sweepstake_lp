@@ -6,10 +6,10 @@ $sm-typo: (
 );
 
 $md-typo: (
-  fs: 14px,
+  fs: 16px,
   lh: 100%,
-  fw: 700,
-  ls: rem(1px),
+  fw: 600,
+  ls: rem(0px),
 );
 
 $lg-typo: (
@@ -29,10 +29,10 @@ $sm: (
 );
 
 $md: (
-  py: 10px,
-  px: 16px,
-  height: 36px,
-  border-radius: 5px,
+  py: 16px,
+  px: 20px,
+  height: 51px,
+  border-radius: 6px,
   typo: $md-typo,
 );
 
@@ -128,7 +128,7 @@ $button-sizes: (
 }
 
 .primary {
-  background-color: $primary;
+  background-color: $red;
   transition: transform 0.4s var(--easeOutQuart);
 
   @include min-pc {
@@ -137,7 +137,7 @@ $button-sizes: (
 }
 
 .secondary {
-  background-color: $secondary;
+  background-color: $black;
 
   transition:
     transform 0.4s var(--easeOutQuart),
@@ -146,24 +146,24 @@ $button-sizes: (
 
 .solid {
   &.primary {
-    color: $beige;
+    color: $white;
   }
 
   &.secondary {
-    color: $blue;
+    color: $white;
   }
 }
 
 .outline {
   background: transparent !important;
   &.primary {
-    border: rem(1px) solid $blue;
-    color: $blue;
+    border: rem(1px) solid $black;
+    color: $black;
   }
 
   &.secondary {
-    border: rem(1px) solid $beige;
-    color: $beige;
+    border: rem(1px) solid $white;
+    color: $white;
   }
 }
 
