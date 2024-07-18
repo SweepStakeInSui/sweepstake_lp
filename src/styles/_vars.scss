@@ -23,21 +23,12 @@ $easeInOutCirc: cubic-bezier(0.45, 0, 0.55, 1);
 /* TYPOGRAPHY*/
 $font_size_rem: 10px;
 
-$black: #000000;
-$white: #ffffff;
-$beige: #ede7df;
-$secondary: $beige;
-$blue: #3f5458;
-$primary: $blue;
-$red: #e26d49;
-$accent: $red;
-$gold: #dca66d;
-$dark: #12100e;
+$black: #1E1E1E;
+$white: #F0F1F5;
+$red: #eb201e;
 
 $typography-colors: (
   black: $black,
   white: $white,
-  secondary: $beige,
-  primary: $blue,
-  accent: $red,
+  red: $red,
 );

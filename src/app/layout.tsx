@@ -9,7 +9,7 @@ import Layout from '@/layouts';
 import Providers from './providers';
 
 export const metadata: Metadata = {
-  // metadataBase: new URL(''),
+  metadataBase: new URL('https://sweepstake.market/'),
   title: 'Sweepstake',
   description: 'Sweepstake',
   openGraph: {
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     title: 'Sweepstake',
     description: 'Sweepstake',
     site: '@site',
-    creator: '@croissain',
     card: 'summary_large_image',
   },
 };
@@ -31,7 +30,9 @@ interface IRootLayout {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: IRootLayout): React.ReactNode {
+export default function RootLayout({
+  children,
+}: Readonly<IRootLayout>): React.ReactNode {
   return (
     <html lang="en">
       <head>
