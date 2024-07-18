@@ -41,5 +41,5 @@ First, prepare the `.env.production` file.
 
 Run the Docker compose
 ```
-docker compose --env-file .env.production up -d
+docker compose --env-file .env.production up -d --build
 ```
