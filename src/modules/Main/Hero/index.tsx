@@ -64,7 +64,7 @@ export default function MainHero() {
       </div>
 
       <div ref={globeRef} className={s.hero_video_wrapper}>
-        <video autoPlay loop muted className={s.hero_video}>
+        <video autoPlay loop muted playsInline className={s.hero_video}>
           <source src="/videos/globe.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
