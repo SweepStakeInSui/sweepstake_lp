@@ -64,10 +64,15 @@ export default function MainHero() {
             The next-gen prediction market is coming
           </Typography>
         </div>
-
-        <div ref={buttonRef} className={s.hero_button_wrapper}>
-          <Button>Visit X (Twitter)</Button>
-        </div>
+        <a
+          href="https://x.com/SweepstakeMkt"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div ref={buttonRef} className={s.hero_button_wrapper}>
+            <Button>Visit X (Twitter)</Button>
+          </div>
+        </a>
       </div>
 
       <div ref={globeRef} className={s.hero_video_wrapper}>
