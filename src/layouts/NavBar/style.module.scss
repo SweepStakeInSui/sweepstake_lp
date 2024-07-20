@@ -10,9 +10,16 @@
     cursor: pointer;
 
     &__mobile {
+      position: relative;
       width: rem(48px);
       height: auto;
       aspect-ratio: 1;
+    }
+
+    &__desktop {
+      position: relative;
+      height: rem(40px);
+      aspect-ratio: 167/40;
     }
   }
 

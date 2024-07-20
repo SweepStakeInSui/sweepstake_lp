@@ -25,7 +25,7 @@
         "pre-commit": "yarn lint-staged && yarn check:type"
       }
     },
-    "prepare": "husky install .husky",
+    "prepare": "husky",
     "postinstall": "husky install"
   },
   "dependencies": {
