@@ -1,0 +1,55 @@
+
+.logoSquare-grayscale {
+  animation: loading 1.5s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  }
+}
+
+.logoWrapper {
+  animation: align 0.5s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes align {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-180%, -50%) scale(0.6);
+  }
+}
+
+.logoTextAni {
+  animation: fromLeft 0.75s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.45s;
+}
+
+.logoText {
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+
+@keyframes fromLeft {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    transform: translate(-35%, -50%);
+  }
+
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: translate(-30%, -50%);
+  }
+}
