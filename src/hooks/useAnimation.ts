@@ -30,7 +30,7 @@ export default function useAnimation({
 
   useEffect((): void => {
     if (disabled) return undefined;
-    if (pageStatus === 'PAGE_ENTER') initAnimation();
+    if (pageStatus === 'PAGE_LOADED') initAnimation();
     return undefined;
   }, [initAnimation, pageStatus, disabled]);
 
@@ -48,7 +48,7 @@ export default function useAnimation({
       }
 
       if (!isObserver) {
-        if (pageStatus === 'PAGE_ENTER')
+        if (pageStatus === 'PAGE_LOADED')
           ScrollTrigger.create({
             trigger: trigger.current,
             onEnter: () => playAnimation(),
@@ -67,7 +67,7 @@ export default function useAnimation({
           },
           { threshold: calcTheshold / 100 },
         );
-        if (pageStatus === 'PAGE_ENTER')
+        if (pageStatus === 'PAGE_LOADED')
           if (trigger.current) refObserver.current?.observe(trigger.current);
       }
     }, [trigger]);
