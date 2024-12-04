@@ -2,6 +2,7 @@
 
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import Link from 'next/link';
 import { useRef } from 'react';
 
 import Button from '@/components/Button';
@@ -64,15 +65,12 @@ export default function MainHero() {
             The next-gen prediction market is coming
           </Typography>
         </div>
-        <a
-          href="https://x.com/SweepstakeMkt"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div ref={buttonRef} className={s.hero_button_wrapper}>
+
+        <div ref={buttonRef} className={s.hero_button_wrapper}>
+          <Link href="https://x.com/Sweepstakes_Mkt" target="_blank">
             <Button>Visit X (Twitter)</Button>
-          </div>
-        </a>
+          </Link>
+        </div>
       </div>
 
       <div ref={globeRef} className={s.hero_video_wrapper}>
